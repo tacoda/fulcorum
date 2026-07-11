@@ -118,13 +118,8 @@
   .term-pan {
     position: absolute; top: 50%; left: 50%;
     width: 150%; max-width: 1500px;
-    transform: translate(-50%, -50%);
-    animation: pan 46s ease-in-out infinite alternate;
+    transform: translate(-50%, -50%) scale(1.18);
     opacity: .5;
-  }
-  @keyframes pan {
-    0%   { transform: translate(-54%, -46%) scale(1.12) rotate(-.4deg); }
-    100% { transform: translate(-46%, -54%) scale(1.28) rotate(.4deg); }
   }
   .term {
     background: #17191c; border: 1px solid var(--border); border-radius: 14px;
@@ -137,16 +132,14 @@
   .term-head .b.r { background: #ff5f57; } .term-head .b.y { background: #febc2e; } .term-head .b.g { background: #28c840; }
   .term-head .t { margin-left: 10px; color: var(--muted); font-size: 12px; }
   .term-body { padding: 18px 22px; white-space: pre-wrap; }
-  .term-body .line { opacity: 0; animation: typein .5s ease forwards; }
+  .term-body .line { opacity: 1; }
   .c-user  { color: var(--orange); }
   .c-agent { color: var(--green); }
   .c-tool  { color: #7cc4ff; }
   .c-ok    { color: var(--green); }
   .c-dim   { color: var(--muted); }
   .c-warn  { color: var(--orange); }
-  @keyframes typein { to { opacity: 1; } }
-  .cursor { display: inline-block; width: 8px; height: 15px; background: var(--green); vertical-align: -2px; animation: blink 1.1s steps(1) infinite; }
-  @keyframes blink { 50% { opacity: 0; } }
+  .cursor { display: inline-block; width: 8px; height: 15px; background: var(--green); vertical-align: -2px; }
 
   /* ---------- Sections ---------- */
   section.block { padding: 96px 0; }
