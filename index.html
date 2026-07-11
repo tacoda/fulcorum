@@ -132,6 +132,9 @@
   .term-head .b.r { background: #ff5f57; } .term-head .b.y { background: #febc2e; } .term-head .b.g { background: #28c840; }
   .term-head .t { margin-left: 10px; color: var(--muted); font-size: 12px; }
   .term-body { padding: 18px 22px; white-space: pre-wrap; }
+  .term-scroll { animation: term-scroll 32s linear infinite; }
+  @keyframes term-scroll { from { transform: translateY(0); } to { transform: translateY(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .term-scroll { animation: none; } }
   .term-body .line { opacity: 1; }
   .c-user  { color: var(--orange); }
   .c-agent { color: var(--green); }
@@ -520,13 +523,10 @@ const TERM_LINES = [
 ];
 (function typeTerminal() {
   const body = document.getElementById('term-body');
-  let html = '';
-  TERM_LINES.forEach((l, i) => {
-    const delay = (i * 0.55).toFixed(2);
-    html += `<div class="line ${l[0]}" style="animation-delay:${delay}s">${l[1] || '&nbsp;'}</div>`;
-  });
-  html += `<div class="line" style="animation-delay:${(TERM_LINES.length*0.55).toFixed(2)}s"><span class="c-user">&gt; </span><span class="cursor"></span></div>`;
-  body.innerHTML = html;
+  const lines = TERM_LINES.map(l => `<div class="line ${l[0]}">${l[1] || '&nbsp;'}</div>`).join('');
+  const block = lines + `<div class="line"><span class="c-user">&gt; </span><span class="cursor"></span></div>`;
+  // duplicate the block so the -50% scroll loops seamlessly
+  body.innerHTML = `<div class="term-scroll">${block}${block}</div>`;
 })();
 
 /* ---------- init ---------- */
