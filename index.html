@@ -8,6 +8,8 @@
 <meta property="og:title" content="Fulcorum — Reliable, Governable AI" />
 <meta property="og:description" content="AI enablement for engineering teams and organizations. Workshops, talks, and training that make AI output reliable and easy to govern." />
 <meta property="og:type" content="website" />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" href="logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -78,10 +80,8 @@
   .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
   .logo { display: flex; align-items: center; gap: 11px; font-weight: 800; font-size: 20px; letter-spacing: -0.03em; }
   .logo .mark {
-    width: 30px; height: 30px; border-radius: 9px;
-    background: linear-gradient(135deg, var(--green) 0%, var(--orange) 60%, var(--silver) 100%);
-    display: grid; place-items: center; color: #0d1a11; font-size: 18px; font-weight: 800;
-    box-shadow: 0 6px 20px -6px rgba(217,182,74,.5);
+    width: 30px; height: 30px; object-fit: contain;
+    filter: drop-shadow(0 6px 14px rgba(217,182,74,.35));
   }
   .nav-links { display: flex; align-items: center; gap: 8px; }
   .nav-links a { padding: 8px 14px; border-radius: 8px; color: var(--muted); font-weight: 500; font-size: 15px; transition: color .15s, background .15s; }
@@ -255,7 +255,7 @@
 <header class="nav">
   <div class="wrap nav-inner">
     <a class="logo" href="#/" aria-label="Fulcorum home">
-      <span class="mark">F</span> Fulcorum
+      <img class="mark" src="logo.png" alt="" width="30" height="30" /> Fulcorum
     </a>
     <button class="burger" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')">≡</button>
     <nav class="nav-links" id="navlinks">
