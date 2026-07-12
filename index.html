@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Fulcorum — Measurable ROI from AI in Software Engineering</title>
-<meta name="description" content="Fulcorum runs conferences, workshops, roundtables, talks, courses, and training that turn AI adoption into measurable ROI for engineering teams and leadership." />
-<meta property="og:title" content="Fulcorum — Measurable ROI from AI" />
-<meta property="og:description" content="AI enablement for engineering teams and leadership. Conferences, workshops, roundtables, talks, courses, and training focused on measurable ROI." />
+<title>Fulcorum — Readable, Debuggable, Shippable AI for Software Engineering</title>
+<meta name="description" content="Fulcorum helps engineering teams and organizations get AI output that's readable, debuggable, and shippable — with the reliability and governance leadership can stand behind — through workshops, talks, and training." />
+<meta property="og:title" content="Fulcorum — Readable, Debuggable, Shippable AI" />
+<meta property="og:description" content="AI enablement for engineering teams and organizations. Workshops, talks, and training for AI output that's readable, debuggable, shippable — with reliability and governance built in." />
 <meta property="og:type" content="website" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,10 +20,10 @@
     --border:    #3b414a;
     --text:      #e7eaee;
     --muted:     #a3abb5;
-    --green:     #34d17a;   /* primary */
-    --green-2:   #26b968;
-    --orange:    #ff8a3d;   /* secondary */
-    --orange-2:  #f5731f;
+    --green:     #3b63e6;   /* primary — cobalt blue */
+    --green-2:   #2f4fd0;
+    --orange:    #b794f6;   /* secondary — light purple */
+    --orange-2:  #a678f0;
     --maxw:      1160px;
     --radius:    16px;
   }
@@ -60,9 +60,9 @@
   }
   .btn-primary {
     background: linear-gradient(100deg, var(--green) 0%, var(--green-2) 100%);
-    color: #06130c; box-shadow: 0 8px 30px -8px rgba(52,209,122,.5);
+    color: #06130c; box-shadow: 0 8px 30px -8px rgba(59,99,230,.5);
   }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 36px -8px rgba(52,209,122,.65); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 36px -8px rgba(59,99,230,.65); }
   .btn-ghost { background: transparent; border-color: var(--border); color: var(--text); }
   .btn-ghost:hover { border-color: var(--orange); color: var(--orange); transform: translateY(-2px); }
 
@@ -79,13 +79,14 @@
     width: 30px; height: 30px; border-radius: 9px;
     background: linear-gradient(135deg, var(--green) 0%, var(--orange) 100%);
     display: grid; place-items: center; color: #0d1a11; font-size: 18px; font-weight: 800;
-    box-shadow: 0 6px 20px -6px rgba(255,138,61,.5);
+    box-shadow: 0 6px 20px -6px rgba(183,148,246,.5);
   }
   .nav-links { display: flex; align-items: center; gap: 8px; }
   .nav-links a { padding: 8px 14px; border-radius: 8px; color: var(--muted); font-weight: 500; font-size: 15px; transition: color .15s, background .15s; }
   .nav-links a:hover { color: var(--text); background: rgba(255,255,255,.05); }
   .nav-links a.active { color: var(--green); }
   .nav-cta { margin-left: 6px; }
+  .nav-links a.nav-cta { color: #0a0d14; }  /* override muted nav-link color */
   .burger { display: none; background: none; border: 0; color: var(--text); font-size: 26px; cursor: pointer; }
 
   /* ---------- Views ---------- */
@@ -106,8 +107,8 @@
   .eyebrow {
     display: inline-flex; align-items: center; gap: 8px;
     font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
-    color: var(--green); background: rgba(52,209,122,.1);
-    border: 1px solid rgba(52,209,122,.25); padding: 6px 14px; border-radius: 999px; margin-bottom: 24px;
+    color: var(--green); background: rgba(59,99,230,.1);
+    border: 1px solid rgba(59,99,230,.25); padding: 6px 14px; border-radius: 999px; margin-bottom: 24px;
   }
   .eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 10px var(--green); }
   .hero h1 { font-size: clamp(38px, 6vw, 68px); font-weight: 800; max-width: 15ch; }
@@ -164,21 +165,21 @@
     border: 1px solid var(--border); border-radius: var(--radius); padding: 30px;
     transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
   }
-  .card:hover { transform: translateY(-4px); border-color: var(--green); box-shadow: 0 20px 50px -24px rgba(52,209,122,.4); }
-  .card .ic { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; font-size: 22px; margin-bottom: 18px; background: rgba(52,209,122,.12); border: 1px solid rgba(52,209,122,.25); }
-  .card:nth-child(even) .ic { background: rgba(255,138,61,.12); border-color: rgba(255,138,61,.25); }
+  .card:hover { transform: translateY(-4px); border-color: var(--green); box-shadow: 0 20px 50px -24px rgba(59,99,230,.4); }
+  .card .ic { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; font-size: 22px; margin-bottom: 18px; background: rgba(59,99,230,.12); border: 1px solid rgba(59,99,230,.25); }
+  .card:nth-child(even) .ic { background: rgba(183,148,246,.12); border-color: rgba(183,148,246,.25); }
   .card h3 { font-size: 20px; font-weight: 700; }
   .card p { color: var(--muted); margin-top: 10px; font-size: 15px; }
 
-  /* book / ROI split */
+  /* book / approach split */
   .split { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
   .book-card {
     background: linear-gradient(150deg, var(--panel-2) 0%, var(--bg-2) 100%);
     border: 1px solid var(--border); border-radius: 20px; padding: 40px;
     position: relative; overflow: hidden;
   }
-  .book-card::before { content:""; position:absolute; top:-40%; right:-30%; width:70%; height:180%;
-    background: radial-gradient(circle, rgba(255,138,61,.18), transparent 70%); }
+  .book-card::before { content:""; position:absolute; inset:0;
+    background: radial-gradient(120% 100% at 50% 0%, rgba(183,148,246,.16), transparent 70%); }
   .book-card ul { list-style: none; padding: 0; margin: 22px 0 0; position: relative; }
   .book-card li { padding: 10px 0 10px 30px; position: relative; color: var(--text); border-top: 1px solid var(--border); }
   .book-card li:first-child { border-top: 0; }
@@ -187,7 +188,7 @@
   /* CTA */
   .cta {
     text-align: center; padding: 80px 40px; border-radius: 24px; margin: 40px 0;
-    background: linear-gradient(120deg, rgba(52,209,122,.14), rgba(255,138,61,.14));
+    background: linear-gradient(120deg, rgba(59,99,230,.14), rgba(183,148,246,.14));
     border: 1px solid var(--border);
   }
   .cta h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; }
@@ -200,7 +201,7 @@
   .events-wrap { padding: 56px 0 96px; }
   .filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 36px; }
   .chip { padding: 8px 16px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); font-size: 14px; font-weight: 500; cursor: pointer; background: transparent; transition: all .15s; }
-  .chip.active, .chip:hover { color: var(--green); border-color: var(--green); background: rgba(52,209,122,.08); }
+  .chip.active, .chip:hover { color: var(--green); border-color: var(--green); background: rgba(59,99,230,.08); }
   .event-list { display: flex; flex-direction: column; gap: 18px; }
   .event {
     display: grid; grid-template-columns: 120px 1fr auto; gap: 28px; align-items: center;
@@ -212,7 +213,7 @@
   .event .date .m { color: var(--orange); font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: .06em; }
   .event .date .d { font-size: 34px; font-weight: 800; line-height: 1; }
   .event .date .y { color: var(--muted); font-size: 13px; }
-  .event .type { display: inline-block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--green); background: rgba(52,209,122,.1); border: 1px solid rgba(52,209,122,.25); padding: 3px 10px; border-radius: 999px; margin-bottom: 8px; }
+  .event .type { display: inline-block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--green); background: rgba(59,99,230,.1); border: 1px solid rgba(59,99,230,.25); padding: 3px 10px; border-radius: 999px; margin-bottom: 8px; }
   .event h3 { font-size: 21px; font-weight: 700; }
   .event .meta { color: var(--muted); font-size: 14px; margin-top: 6px; }
   .event .desc { color: var(--muted); font-size: 15px; margin-top: 8px; max-width: 60ch; }
@@ -257,7 +258,7 @@
     <nav class="nav-links" id="navlinks">
       <a href="#/" data-route="/">Home</a>
       <a href="#/#offerings">What we do</a>
-      <a href="#/#roi">ROI</a>
+      <a href="#/#approach">Approach</a>
       <a href="#/events" data-route="/events">Events</a>
       <a class="btn btn-primary nav-cta" href="#/events">See events →</a>
     </nav>
@@ -281,9 +282,9 @@
     <div class="hero-scrim"></div>
     <div class="hero-content">
       <div class="wrap">
-        <span class="eyebrow"><span class="dot"></span> AI enablement, measured</span>
-        <h1>Turn AI adoption into <span class="grad-text">measurable ROI</span>.</h1>
-        <p class="sub">Fulcorum helps engineering teams and their leaders ship AI-assisted work that's reliable, reviewable, and worth the spend — through conferences, workshops, roundtables, talks, courses, and training.</p>
+        <span class="eyebrow"><span class="dot"></span> AI you can actually ship</span>
+        <h1>Ship AI-assisted code that's <span class="grad-text">readable, debuggable, shippable</span>.</h1>
+        <p class="sub">Fulcorum helps engineering teams and organizations get AI output that's readable, debuggable, and shippable — with the reliability and governance leadership can stand behind — through workshops, talks, and training.</p>
         <div class="actions">
           <a class="btn btn-primary" href="#/events">Explore events</a>
           <a class="btn btn-ghost" href="#/#offerings">What we do</a>
@@ -295,9 +296,9 @@
   <section class="block" style="background:var(--bg-2); border-block:1px solid var(--border);">
     <div class="wrap">
       <div class="metrics">
-        <div class="metric"><div class="n grad-text">2×</div><div class="l">Faster review cycles when the repo is shaped for agents</div></div>
-        <div class="metric"><div class="n grad-text">&lt;1 band</div><div class="l">Outcome spread pulled into a range you can live with</div></div>
-        <div class="metric"><div class="n grad-text">100%</div><div class="l">Focus on ROI you can put in front of a CFO</div></div>
+        <div class="metric"><div class="n grad-text">Readable</div><div class="l">AI output your team can review as fast as they can read it</div></div>
+        <div class="metric"><div class="n grad-text">Debuggable</div><div class="l">Failures you can trace — not diffs you reverse-engineer at 3am</div></div>
+        <div class="metric"><div class="n grad-text">Shippable</div><div class="l">Changes that pass review and go to prod with confidence</div></div>
       </div>
     </div>
   </section>
@@ -306,34 +307,19 @@
     <div class="wrap">
       <div class="section-head">
         <span class="kick">What we do</span>
-        <h2>Formats built for engineers <em>and</em> the people who fund them.</h2>
-        <p>Every format lands on the same question: is the AI actually paying off, and how do you prove it?</p>
+        <h2>Formats built for engineering teams <em>and</em> the organizations around them.</h2>
+        <p>Every format lands on the same question: is the AI output readable, debuggable, and shippable — and how do you get there?</p>
       </div>
       <div class="grid">
-        <div class="card">
-          <div class="ic">🎤</div>
-          <h3>Conferences</h3>
-          <p>Multi-track events where engineering leaders and practitioners share what actually moved the ROI needle — no hype demos.</p>
-        </div>
         <div class="card">
           <div class="ic">🛠️</div>
           <h3>Workshops</h3>
           <p>Hands-on sessions that shape your repo — charter, rules, hooks, tests — so agents produce work you can trust and ship.</p>
         </div>
         <div class="card">
-          <div class="ic">💬</div>
-          <h3>Roundtables</h3>
-          <p>Small, candid rooms of leaders comparing notes on adoption, cost, and the metrics that survive a budget review.</p>
-        </div>
-        <div class="card">
           <div class="ic">📣</div>
           <h3>Talks</h3>
           <p>Sharp, single-idea sessions drawn from the book — the reliability engineering that makes AI-generated code dependable.</p>
-        </div>
-        <div class="card">
-          <div class="ic">📚</div>
-          <h3>Courses</h3>
-          <p>Self-paced, cohort-ready curricula that take a team from first agent commit to a repo shaped for reliable, measurable AI work.</p>
         </div>
         <div class="card">
           <div class="ic">🎓</div>
@@ -344,13 +330,13 @@
     </div>
   </section>
 
-  <section class="block" id="roi" style="background:var(--bg-2); border-block:1px solid var(--border);">
+  <section class="block" id="approach" style="background:var(--bg-2); border-block:1px solid var(--border);">
     <div class="wrap">
       <div class="split">
         <div>
           <span class="kick" style="color:var(--orange);font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase;">Grounded in the book</span>
           <h2 style="font-size:clamp(30px,4vw,44px);margin-top:12px;font-weight:800;">The repo is the variable you can actually change.</h2>
-          <p style="color:var(--muted);margin-top:18px;font-size:18px;">Models change every quarter. What you author inside the repo — the charter, the rules, the hooks, the tests, the seams — outlives every model and editor. Fulcorum's workshops and talks start from that idea and turn it into ROI you can measure.</p>
+          <p style="color:var(--muted);margin-top:18px;font-size:18px;">Models change every quarter. What you author inside the repo — the charter, the rules, the hooks, the tests, the seams — outlives every model and editor. Fulcorum's workshops and talks start from that idea and turn it into AI output your team can read, debug, and ship — with reliability and governance leadership can stand behind.</p>
           <div style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;">
             <a class="btn btn-primary" href="#/events">Bring this to your team</a>
             <a class="btn btn-ghost" href="https://www.tacoda.dev" target="_blank" rel="noopener">About the author</a>
@@ -362,7 +348,8 @@
             <li>A one-page audit of the gaps in their own repo</li>
             <li>Constraint engineering: shaping the spread of agent outcomes</li>
             <li>Feedback gates and sensors that catch the 480-line "small cleanup"</li>
-            <li>Metrics that hold up in a budget review, not just a demo</li>
+            <li>AI output that stays readable and debuggable as it scales</li>
+            <li>Governance and guardrails leadership can sign off on</li>
             <li>A reliability strategy that isn't tied to this quarter's model</li>
           </ul>
         </div>
@@ -373,8 +360,8 @@
   <section class="block">
     <div class="wrap">
       <div class="cta">
-        <h2>Ready to make AI pay off — provably?</h2>
-        <p>Book a workshop, join a roundtable, or bring Fulcorum to your next event.</p>
+        <h2>Ready to ship AI you can actually trust?</h2>
+        <p>Book a workshop, bring in training, or add Fulcorum to your next event.</p>
         <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
           <a class="btn btn-primary" href="#/events">See upcoming events</a>
           <a class="btn btn-ghost" href="mailto:hello@fulcorum.com">Get in touch</a>
@@ -389,7 +376,7 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>Events</h1>
-      <p>Conferences, workshops, roundtables, talks, courses, and training on getting measurable ROI out of AI. Registration is handled through Eventbrite.</p>
+      <p>Workshops, talks, and training on shipping AI output that's readable, debuggable, and shippable. Registration is handled through Eventbrite.</p>
     </div>
   </section>
   <section class="events-wrap">
@@ -402,7 +389,7 @@
 
 <footer>
   <div class="wrap foot-inner">
-    <div>© <span id="year"></span> Fulcorum · AI enablement for measurable ROI</div>
+    <div>© <span id="year"></span> Fulcorum · AI enablement for readable, debuggable, shippable code</div>
     <div class="foot-links">
       <a href="#/">Home</a>
       <a href="#/events">Events</a>
@@ -463,7 +450,7 @@ function drawEvents() {
       <div class="empty">
         <div class="ic">🗓️</div>
         <h3>No events scheduled — yet.</h3>
-        <p>The first conferences, workshops, and talks are being lined up now. Want to be first to know, or bring Fulcorum to your team?</p>
+        <p>The first workshops, talks, and training sessions are being lined up now. Want to be first to know, or bring Fulcorum to your team?</p>
         <a class="btn btn-primary" href="mailto:hello@fulcorum.com">Get on the list</a>
       </div>`;
     return;
