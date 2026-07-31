@@ -1,0 +1,27 @@
+[
+  {
+    "type": "Book",
+    "title": "Harness Engineering",
+    "source": "Leanpub · Paid",
+    "description": "The book behind Fulcorum's workshops and talks: how to author the charter, rules, hooks, tests, and seams that make AI output reliable — and outlive every model.",
+    "url": "https://leanpub.com/harness-engineering",
+    "cta": "Read the book"
+  },
+  {
+    "type": "Course",
+    "title": "Harness Engineering — The Course",
+    "source": "Leanpub · Paid",
+    "description": "A guided path through harness engineering: turn the book's ideas into working rules, guardrails, and feedback gates for your own repo.",
+    "url": "https://leanpub.com/c/harness-engineering",
+    "cta": "Take the course"
+  },
+  {
+    "type": "Podcast",
+    "title": "You need to learn about harness engineering",
+    "source": "Zyte ExtractPod · EP09",
+    "description": "On Zyte's ExtractPod, Ian Johnson makes the case for harness engineering — the practices, rules, and guardrails that make AI-assisted development reliable and governable.",
+    "youtube": "Bcv1DIjbR5E",
+    "url": "https://www.youtube.com/watch?v=Bcv1DIjbR5E",
+    "cta": "Watch on YouTube"
+  }
+]

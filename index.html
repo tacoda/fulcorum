@@ -218,10 +218,23 @@
   .event .date .m { color: var(--orange); font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: .06em; }
   .event .date .d { font-size: 34px; font-weight: 800; line-height: 1; }
   .event .date .y { color: var(--muted); font-size: 13px; }
-  .event .type { display: inline-block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--green); background: rgba(204,107,31,.1); border: 1px solid rgba(204,107,31,.25); padding: 3px 10px; border-radius: 999px; margin-bottom: 8px; }
+  .event .type, .resource .type { display: inline-block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--green); background: rgba(204,107,31,.1); border: 1px solid rgba(204,107,31,.25); padding: 3px 10px; border-radius: 999px; margin-bottom: 8px; }
   .event h3 { font-size: 21px; font-weight: 700; }
   .event .meta { color: var(--muted); font-size: 14px; margin-top: 6px; }
   .event .desc { color: var(--muted); font-size: 15px; margin-top: 8px; max-width: 60ch; }
+
+  /* ---------- Resources view ---------- */
+  .resource-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .resource { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: border-color .2s; }
+  .resource:hover { border-color: var(--orange); }
+  .resource-body { padding: 22px 26px 26px; }
+  .resource-body h3 { font-size: 20px; font-weight: 700; }
+  .resource-body .meta { color: var(--muted); font-size: 14px; margin-top: 6px; }
+  .resource-body .desc { color: var(--muted); font-size: 15px; margin-top: 10px; }
+  .resource-body .btn { margin-top: 18px; }
+  .embed { position: relative; aspect-ratio: 16 / 9; background: #000; border-radius: var(--radius); overflow: hidden; }
+  .resource .embed { border-radius: 0; }
+  .embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
   .empty {
     text-align: center; padding: 90px 30px; border: 1px dashed var(--border); border-radius: 20px;
@@ -251,6 +264,7 @@
     .event { grid-template-columns: 90px 1fr; }
     .event .cta-col { grid-column: 1 / -1; }
     .event .date { padding-right: 14px; }
+    .resource-list { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -267,6 +281,7 @@
       <a href="#/#offerings">What we do</a>
       <a href="#/#approach">Approach</a>
       <a href="#/events" data-route="/events">Events</a>
+      <a href="#/resources" data-route="/resources">Resources</a>
       <a href="mailto:ian@fulcorum.com">Contact</a>
       <a class="btn btn-primary nav-cta" href="#/events">See events →</a>
     </nav>
@@ -381,6 +396,24 @@
     </div>
   </section>
 
+  <section class="block" style="background:var(--bg-2); border-block:1px solid var(--border);">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <span class="kick" style="color:var(--orange);font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase;">On the podcast</span>
+          <h2 style="font-size:clamp(30px,4vw,44px);margin-top:12px;font-weight:800;">Why every team needs harness engineering.</h2>
+          <p style="color:var(--muted);margin-top:18px;font-size:18px;">Ian joins Zyte's ExtractPod to make the case for harness engineering — the rules, hooks, and guardrails that make AI-assisted development reliable and governable, not a gamble.</p>
+          <div style="margin-top:32px;display:flex;flex-direction:column;align-items:flex-start;gap:14px;">
+            <a class="btn btn-ghost" href="#/resources">More resources →</a>
+          </div>
+        </div>
+        <div class="embed">
+          <iframe src="https://www.youtube-nocookie.com/embed/Bcv1DIjbR5E" title="You need to learn about harness engineering | ExtractPod EP09 with Ian Johnson" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="block">
     <div class="wrap">
       <div class="cta">
@@ -411,12 +444,28 @@
   </section>
 </main>
 
+<!-- ============ RESOURCES ============ -->
+<main id="view-resources" class="view">
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Resources</h1>
+      <p>Podcasts, talks, and videos on harness engineering and making AI-assisted software reliable and governable.</p>
+    </div>
+  </section>
+  <section class="events-wrap">
+    <div class="wrap">
+      <div class="resource-list" id="resource-list"></div>
+    </div>
+  </section>
+</main>
+
 <footer>
   <div class="wrap foot-inner">
     <div>© <span id="year"></span> Fulcorum · AI enablement for reliable, governable software</div>
     <div class="foot-links">
       <a href="#/">Home</a>
       <a href="#/events">Events</a>
+      <a href="#/resources">Resources</a>
       <a href="mailto:ian@fulcorum.com">Contact</a>
       <a href="https://leanpub.com/harness-engineering" target="_blank" rel="noopener">The book</a>
       <a href="https://discord.gg/wSbCZwHPb" target="_blank" rel="noopener">Discord</a>
@@ -429,17 +478,21 @@
 /* ---------- SPA router (hash-based) ---------- */
 function currentRoute() {
   const h = location.hash.replace(/^#/, '') || '/';
-  return h.startsWith('/events') ? 'events' : 'home';
+  if (h.startsWith('/events')) return 'events';
+  if (h.startsWith('/resources')) return 'resources';
+  return 'home';
 }
 function render() {
   const route = currentRoute();
+  const path = route === 'home' ? '/' : '/' + route;
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-  document.getElementById(route === 'events' ? 'view-events' : 'view-home').classList.add('active');
+  document.getElementById('view-' + route).classList.add('active');
   document.querySelectorAll('.nav-links a[data-route]').forEach(a => {
-    a.classList.toggle('active', a.dataset.route === (route === 'events' ? '/events' : '/'));
+    a.classList.toggle('active', a.dataset.route === path);
   });
   document.getElementById('navlinks').classList.remove('open');
   if (route === 'events') loadEvents();
+  if (route === 'resources') loadResources();
   // support #/#anchor deep links on home
   const anchor = location.hash.split('#')[2];
   if (route === 'home' && anchor) {
@@ -517,6 +570,47 @@ function renderEvent(e) {
         ${e.url ? `<a class="btn btn-primary" href="${e.url}" target="_blank" rel="noopener">${e.cta || 'View event'}</a>` : ''}
       </div>
     </div>`;
+}
+
+/* ---------- Resources (manual resources.json) ---------- */
+let RESOURCES = null;
+async function loadResources() {
+  if (RESOURCES === null) {
+    try {
+      const res = await fetch('resources.json', { cache: 'no-store' });
+      RESOURCES = await res.json();
+    } catch (e) { RESOURCES = []; }
+  }
+  drawResources();
+}
+function drawResources() {
+  const list = document.getElementById('resource-list');
+  if (!RESOURCES.length) {
+    list.innerHTML = `
+      <div class="empty">
+        <div class="ic">🎙️</div>
+        <h3>Nothing here yet.</h3>
+        <p>Podcasts, talks, and videos are on the way. Check back soon.</p>
+      </div>`;
+    return;
+  }
+  list.innerHTML = RESOURCES.map(renderResource).join('');
+}
+function renderResource(r) {
+  const media = r.youtube
+    ? `<div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/${r.youtube}" title="${r.title || ''}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>`
+    : '';
+  return `
+    <article class="resource">
+      ${media}
+      <div class="resource-body">
+        ${r.type ? `<span class="type">${r.type}</span>` : ''}
+        <h3>${r.title || 'Untitled'}</h3>
+        ${r.source ? `<div class="meta">${r.source}</div>` : ''}
+        ${r.description ? `<div class="desc">${r.description}</div>` : ''}
+        ${r.url ? `<a class="btn btn-primary" href="${r.url}" target="_blank" rel="noopener">${r.cta || 'Open'}</a>` : ''}
+      </div>
+    </article>`;
 }
 
 /* ---------- Animated Claude Code terminal ---------- */
