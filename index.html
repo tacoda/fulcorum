@@ -400,7 +400,7 @@
   <section class="page-hero">
     <div class="wrap">
       <h1>Events</h1>
-      <p>Workshops, talks, training, and consulting on making AI-assisted engineering reliable and governable. Registration is handled through Eventbrite.</p>
+      <p>Workshops, talks, training, and consulting on making AI-assisted engineering reliable and governable. Each event links out to wherever it's hosted.</p>
     </div>
   </section>
   <section class="events-wrap">
@@ -514,7 +514,7 @@ function renderEvent(e) {
         ${e.description ? `<div class="desc">${e.description}</div>` : ''}
       </div>
       <div class="cta-col">
-        ${e.url ? `<a class="btn btn-primary" href="${e.url}" target="_blank" rel="noopener">Register</a>` : ''}
+        ${e.url ? `<a class="btn btn-primary" href="${e.url}" target="_blank" rel="noopener">${e.cta || 'View event'}</a>` : ''}
       </div>
     </div>`;
 }

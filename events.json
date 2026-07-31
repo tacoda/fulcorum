@@ -6,6 +6,37 @@
     "time": "2:00–3:30 PM PDT",
     "location": "Online event",
     "description": "Level up from junior to senior with practical AI skills, career tips, and mindset shifts to help you stand out in today's AI-driven world.",
-    "url": "https://www.eventbrite.com/e/how-to-grow-from-junior-to-senior-in-the-age-of-ai-tickets-1994040543945"
+    "url": "https://www.eventbrite.com/e/how-to-grow-from-junior-to-senior-in-the-age-of-ai-tickets-1994040543945",
+    "cta": "Register"
+  },
+  {
+    "date": "2026-08-25",
+    "type": "In person",
+    "title": "Full Lifecycle AI Software Teams Meetup",
+    "time": "6:30–8:30 PM CDT",
+    "location": "STATION Austin · 701 Brazos St, Austin, TX",
+    "description": "Speaking at this monthly meetup for engineers, PMs, designers, QA, and founders rethinking how software gets built end to end in an AI-first world.",
+    "url": "https://luma.com/xyqgsmr5?tk=m2T3oZ",
+    "cta": "View event"
+  },
+  {
+    "date": "2026-10-07",
+    "type": "In person",
+    "title": "Extract Summit Austin",
+    "time": "Oct 7–8, 2026",
+    "location": "Brazos Hall · Austin, TX",
+    "description": "Attending the web data conference — workshops and talks on extraction, headless browsers, AI-powered parsing, and the ethics of web data.",
+    "url": "https://www.extractsummit.io/",
+    "cta": "View event"
+  },
+  {
+    "date": "2026-10-26",
+    "type": "In person",
+    "title": "Austin Tech Week",
+    "time": "Oct 26–30, 2026",
+    "location": "Austin, TX",
+    "description": "Attending five days of founders, operators, and investors across the city that built it from scratch.",
+    "url": "https://www.austintech.com/",
+    "cta": "View event"
   }
 ]
