@@ -244,6 +244,27 @@
   .empty h3 { font-size: 24px; font-weight: 700; }
   .empty p { color: var(--muted); margin: 12px auto 28px; max-width: 46ch; font-size: 17px; }
 
+  /* ---------- Workshops view ---------- */
+  .ws-bundle {
+    display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+    background: linear-gradient(120deg, rgba(204,107,31,.16), rgba(217,182,74,.14) 60%, rgba(199,204,212,.1));
+    border: 1px solid var(--border); border-radius: 20px; padding: 32px 36px; margin-bottom: 20px;
+  }
+  .ws-bundle h3 { font-size: 24px; font-weight: 800; }
+  .ws-bundle p { color: var(--muted); margin-top: 8px; max-width: 52ch; }
+  .ws-bundle .price { font-size: 40px; font-weight: 800; }
+  .ws-bundle .save { color: var(--orange); font-size: 14px; font-weight: 600; margin-top: 4px; }
+  .ws-bundle .bundle-right { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+  .ws-group { margin-top: 44px; }
+  .ws-group > .lbl { color: var(--orange); font-weight: 600; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 20px; }
+  .ws-card { display: flex; flex-direction: column; }
+  .ws-card .tier { display: inline-block; align-self: flex-start; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--green); background: rgba(204,107,31,.1); border: 1px solid rgba(204,107,31,.25); padding: 3px 10px; border-radius: 999px; margin-bottom: 14px; }
+  .ws-card .price-row { display: flex; align-items: baseline; gap: 10px; margin-top: 16px; }
+  .ws-card .price-row .p { font-size: 28px; font-weight: 800; }
+  .ws-card .price-row .dur { color: var(--muted); font-size: 14px; }
+  .ws-card .ws-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+  .ws-card p { flex: 1; }
+
   /* ---------- Footer ---------- */
   footer { border-top: 1px solid var(--border); padding: 48px 0; margin-top: 40px; }
   .foot-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; color: var(--muted); font-size: 14px; }
@@ -280,6 +301,7 @@
       <a href="#/" data-route="/">Home</a>
       <a href="#/#offerings">What we do</a>
       <a href="#/#approach">Approach</a>
+      <a href="#/workshops" data-route="/workshops">Workshops</a>
       <a href="#/events" data-route="/events">Events</a>
       <a href="#/resources" data-route="/resources">Resources</a>
       <a href="mailto:ian@fulcorum.com">Contact</a>
@@ -334,11 +356,11 @@
         <p>Every format lands on the same question: can you rely on the AI output — and govern it — well enough to prove it to the people who answer for it?</p>
       </div>
       <div class="grid">
-        <div class="card">
+        <a class="card" href="#/workshops">
           <div class="ic">🛠️</div>
           <h3>Workshops</h3>
           <p>Hands-on sessions that shape your repo — charter, rules, hooks, tests — so agents produce work you can trust.</p>
-        </div>
+        </a>
         <div class="card">
           <div class="ic">📣</div>
           <h3>Talks</h3>
@@ -459,11 +481,25 @@
   </section>
 </main>
 
+<!-- ============ WORKSHOPS ============ -->
+<main id="view-workshops" class="view">
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Workshops</h1>
+      <p>Hands-on sessions that turn the ideas in <em>Harness Engineering</em> into working code — from the charter that governs an agent to an orchestrator that runs many at once. Book one, take the series, or start free.</p>
+    </div>
+  </section>
+  <section class="events-wrap">
+    <div class="wrap" id="workshops-root"></div>
+  </section>
+</main>
+
 <footer>
   <div class="wrap foot-inner">
     <div>© <span id="year"></span> Fulcorum · AI enablement for reliable, governable software</div>
     <div class="foot-links">
       <a href="#/">Home</a>
+      <a href="#/workshops">Workshops</a>
       <a href="#/events">Events</a>
       <a href="#/resources">Resources</a>
       <a href="mailto:ian@fulcorum.com">Contact</a>
@@ -478,6 +514,7 @@
 /* ---------- SPA router (hash-based) ---------- */
 function currentRoute() {
   const h = location.hash.replace(/^#/, '') || '/';
+  if (h.startsWith('/workshops')) return 'workshops';
   if (h.startsWith('/events')) return 'events';
   if (h.startsWith('/resources')) return 'resources';
   return 'home';
@@ -493,6 +530,7 @@ function render() {
   document.getElementById('navlinks').classList.remove('open');
   if (route === 'events') loadEvents();
   if (route === 'resources') loadResources();
+  if (route === 'workshops') loadWorkshops();
   // support #/#anchor deep links on home
   const anchor = location.hash.split('#')[2];
   if (route === 'home' && anchor) {
@@ -611,6 +649,66 @@ function renderResource(r) {
         ${r.url ? `<a class="btn btn-primary" href="${r.url}" target="_blank" rel="noopener">${r.cta || 'Open'}</a>` : ''}
       </div>
     </article>`;
+}
+
+/* ---------- Workshops (manual workshops.json) ---------- */
+let WORKSHOPS = null;
+async function loadWorkshops() {
+  if (WORKSHOPS === null) {
+    try {
+      const res = await fetch('workshops.json', { cache: 'no-store' });
+      WORKSHOPS = await res.json();
+    } catch (e) { WORKSHOPS = { groups: [] }; }
+  }
+  drawWorkshops();
+}
+function drawWorkshops() {
+  const root = document.getElementById('workshops-root');
+  const w = WORKSHOPS || {};
+  const groups = w.groups || [];
+  if (!groups.length) {
+    root.innerHTML = `
+      <div class="empty">
+        <div class="ic">🛠️</div>
+        <h3>Workshops are being lined up.</h3>
+        <p>Check back soon, or get in touch to bring one to your team.</p>
+        <a class="btn btn-primary" href="mailto:ian@fulcorum.com">Get in touch</a>
+      </div>`;
+    return;
+  }
+  const bundle = w.bundle ? `
+    <div class="ws-bundle">
+      <div>
+        <h3>${w.bundle.title}</h3>
+        ${w.bundle.note ? `<p>${w.bundle.note}</p>` : ''}
+      </div>
+      <div class="bundle-right">
+        <div class="price grad-text">${w.bundle.price}</div>
+        ${w.bundle.saved ? `<div class="save">${w.bundle.saved}</div>` : ''}
+        <a class="btn btn-primary" href="${w.bundle.url}">${w.bundle.cta || 'Request the bundle'}</a>
+      </div>
+    </div>` : '';
+  const groupsHtml = groups.map(g => `
+    <div class="ws-group">
+      ${g.label ? `<div class="lbl">${g.label}</div>` : ''}
+      <div class="grid">${(g.items || []).map(renderWorkshop).join('')}</div>
+    </div>`).join('');
+  root.innerHTML = bundle + groupsHtml;
+}
+function renderWorkshop(w) {
+  const req = `mailto:ian@fulcorum.com?subject=${encodeURIComponent('Workshop request — ' + (w.title || ''))}`;
+  const isFree = (w.price || '').toLowerCase() === 'free';
+  return `
+    <div class="card ws-card">
+      ${w.tier ? `<span class="tier">${w.tier}</span>` : ''}
+      <h3>${w.title || 'Workshop'}</h3>
+      <p>${w.description || ''}</p>
+      <div class="price-row"><span class="p grad-text">${w.price || ''}</span><span class="dur">${w.duration || ''}</span></div>
+      <div class="ws-actions">
+        ${w.url ? `<a class="btn btn-primary" href="${w.url}" target="_blank" rel="noopener">${w.cta || 'Open workshop'}</a>` : ''}
+        <a class="btn btn-ghost" href="${req}">${isFree ? 'Ask a question' : 'Request / book'}</a>
+      </div>
+    </div>`;
 }
 
 /* ---------- Animated Claude Code terminal ---------- */

@@ -1,0 +1,99 @@
+{
+  "bundle": {
+    "title": "The Harness Engineering Series",
+    "price": "$249",
+    "saved": "Save $67 vs. booking the four separately",
+    "note": "All four core workshops — Charter, Harness, Factory, Orchestrator — in one track.",
+    "cta": "Request the bundle",
+    "url": "mailto:ian@fulcorum.com?subject=Workshop%20bundle%20request%20%E2%80%94%20Harness%20Engineering%20Series"
+  },
+  "groups": [
+    {
+      "label": "Start here — free",
+      "items": [
+        {
+          "title": "Junior to Senior in the Age of AI",
+          "tier": "Free",
+          "price": "Free",
+          "duration": "1 hr",
+          "description": "The agent changes what it means to be junior more than what it means to be senior. Build the judgment the tool can't supply.",
+          "url": "https://tacoda.github.io/fulcorum-junior-to-senior-workshop",
+          "cta": "Open workshop"
+        }
+      ]
+    },
+    {
+      "label": "Core series · $79 each · 3 hr",
+      "items": [
+        {
+          "title": "Charter",
+          "tier": "Core",
+          "price": "$79",
+          "duration": "3 hr",
+          "description": "Author the standard that governs an agent. Prose, no code — the layered spec every run answers to.",
+          "url": "https://tacoda.github.io/fulcorum-charter-workshop",
+          "cta": "Open workshop"
+        },
+        {
+          "title": "Harness",
+          "tier": "Core",
+          "price": "$79",
+          "duration": "3 hr",
+          "description": "Build the engine that applies the charter to a single run. agent = model + harness.",
+          "url": "https://tacoda.github.io/fulcorum-harness-workshop",
+          "cta": "Open workshop"
+        },
+        {
+          "title": "Factory",
+          "tier": "Core",
+          "price": "$79",
+          "duration": "3 hr",
+          "description": "Build the runtime line that runs agent processes into delivered work: ticket → PR. The meta-harness.",
+          "url": "https://tacoda.github.io/fulcorum-factory-workshop",
+          "cta": "Open workshop"
+        },
+        {
+          "title": "Orchestrator",
+          "tier": "Core",
+          "price": "$79",
+          "duration": "3 hr",
+          "description": "Build the harness that manages multiple agents: one lead, N workers, run in parallel, then merged.",
+          "url": "https://tacoda.github.io/fulcorum-orchestrator-workshop",
+          "cta": "Open workshop"
+        }
+      ]
+    },
+    {
+      "label": "One-off specials · $99 each · 3 hr",
+      "items": [
+        {
+          "title": "Deep Agent on LangChain / LangGraph",
+          "tier": "One-off",
+          "price": "$99",
+          "duration": "3 hr",
+          "description": "Build an orchestrating Deep Agent: a producer that delegates to specialist subagents to package one podcast episode.",
+          "url": "https://tacoda.github.io/fulcorum-deepagents-workshop",
+          "cta": "Open workshop"
+        },
+        {
+          "title": "Harness on Pydantic AI",
+          "tier": "One-off",
+          "price": "$99",
+          "duration": "3 hr",
+          "description": "Build a real-world harness with Pydantic AI: one podcast episode → one validated show package.",
+          "url": "https://tacoda.github.io/fulcorum-pydantic-harness-workshop",
+          "cta": "Open workshop"
+        },
+        {
+          "title": "Orchestrator on Pydantic AI",
+          "tier": "One-off",
+          "price": "$99",
+          "duration": "3 hr",
+          "description": "Build an orchestrator with Pydantic AI: a producer agent that delegates to specialist agents to package one podcast episode.",
+          "url": "https://tacoda.github.io/fulcorum-pydantic-orchestrator-workshop",
+          "cta": "Open workshop"
+        }
+      ]
+    }
+  ]
+}
