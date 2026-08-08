@@ -265,6 +265,37 @@
   .ws-card .ws-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
   .ws-card p { flex: 1; }
 
+  /* ---------- Doc / workshop article ---------- */
+  .doc { max-width: 760px; margin: 0 auto; padding: 8px 0 40px; }
+  .doc .back { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 14px; font-weight: 500; margin-bottom: 28px; }
+  .doc .back:hover { color: var(--green); }
+  .doc h2 { font-size: clamp(24px, 3.4vw, 34px); font-weight: 800; margin: 56px 0 8px; }
+  .doc h2:first-of-type { margin-top: 8px; }
+  .doc h3 { font-size: 21px; font-weight: 700; margin: 36px 0 6px; }
+  .doc p { color: var(--text); margin: 16px 0; font-size: 17px; }
+  .doc ul, .doc ol { color: var(--text); margin: 16px 0; padding-left: 22px; font-size: 17px; }
+  .doc li { margin: 8px 0; }
+  .doc li::marker { color: var(--green); }
+  .doc a { color: var(--green); text-decoration: underline; text-underline-offset: 2px; }
+  .doc a:hover { color: var(--orange); }
+  .doc strong { color: var(--text); font-weight: 700; }
+  .doc hr { border: 0; border-top: 1px solid var(--border); margin: 48px 0; }
+  .doc code { font-family: 'JetBrains Mono', monospace; font-size: 13.5px; background: var(--panel-2); border: 1px solid var(--border); border-radius: 6px; padding: 1px 6px; }
+  .doc pre { background: #17191c; border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; overflow-x: auto; margin: 20px 0; }
+  .doc pre code { background: none; border: 0; padding: 0; font-size: 13px; line-height: 1.7; color: var(--text); white-space: pre; }
+  .doc blockquote { margin: 22px 0; padding: 14px 22px; border-left: 3px solid var(--green); background: var(--bg-2); border-radius: 0 12px 12px 0; color: var(--muted); }
+  .doc blockquote p { color: var(--muted); }
+  .doc blockquote strong { color: var(--text); }
+  .doc .table-scroll { overflow-x: auto; margin: 22px 0; }
+  .doc table { border-collapse: collapse; width: 100%; font-size: 15px; }
+  .doc th, .doc td { border: 1px solid var(--border); padding: 10px 14px; text-align: left; vertical-align: top; }
+  .doc th { background: var(--panel-2); font-weight: 700; }
+  .doc .flow { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; margin: 28px 0; }
+  .doc .flow .node { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 14px 18px; text-align: center; font-size: 14px; font-weight: 600; }
+  .doc .flow .node span { display: block; color: var(--muted); font-weight: 400; font-size: 12px; margin-top: 2px; }
+  .doc .flow .arrow { color: var(--green); font-size: 20px; font-weight: 700; }
+  .doc .flow .band { background: linear-gradient(100deg, rgba(204,107,31,.16), rgba(217,182,74,.14)); border-color: var(--green); }
+
   /* ---------- Footer ---------- */
   footer { border-top: 1px solid var(--border); padding: 48px 0; margin-top: 40px; }
   .foot-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; color: var(--muted); font-size: 14px; }
@@ -491,6 +522,252 @@
   </section>
 </main>
 
+<!-- ============ WORKSHOP · JUNIOR TO SENIOR ============ -->
+<main id="view-workshop-jr" class="view">
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="tier" style="display:inline-block;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--green);background:rgba(204,107,31,.1);border:1px solid rgba(204,107,31,.25);padding:3px 10px;border-radius:999px;margin-bottom:14px;">Free · 1 hr</span>
+      <h1>How to Grow from Junior to Senior in the Age of AI</h1>
+      <p>The agent changes what it means to be junior more than what it means to be senior. A senior already has the judgment the tool can't supply. A junior is building that judgment at the exact moment the tool offers to skip it — it hands you working code faster than you can understand it, and the whole pull is to accept the diff and move on. This workshop is the structured refusal to skip.</p>
+      <div style="margin-top:26px;display:flex;gap:12px;flex-wrap:wrap;">
+        <a class="btn btn-primary" href="https://github.com/tacoda/workshop-junior-to-senior" target="_blank" rel="noopener">Get the repo →</a>
+        <a class="btn btn-ghost" href="#/workshops">All workshops</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="events-wrap">
+    <div class="wrap">
+      <article class="doc">
+        <a class="back" href="#/workshops">← Back to workshops</a>
+
+        <ul>
+          <li><strong>Who it's for:</strong> early-career engineers working with an AI coding tool, and the leads who mentor them.</li>
+          <li><strong>What you leave with:</strong> the comprehension card (one rule, five questions, five moves) and a habit you can run on real work Monday morning.</li>
+          <li><strong>The seam it drives home:</strong> the agent produces plausible code fast; seniority is the judgment to tell plausible from correct. That judgment is trained, not downloaded.</li>
+        </ul>
+
+        <blockquote>
+          <p>The <a href="https://github.com/tacoda/workshop-junior-to-senior" target="_blank" rel="noopener">workshop repo</a> ships the timed 1-hour run sheet and the seed code. This page is the fuller reference behind it — read it before or after the session, not during. <strong>The Lab</strong> is the live hour; <strong>After the workshop</strong> is your take-home reps.</p>
+        </blockquote>
+
+        <hr />
+
+        <h2>The Lab</h2>
+
+        <h3>Before you start — get to green</h3>
+        <p>You can read code and you've used an AI coding tool once. That's enough. Run this first and confirm a green suite — don't debug your environment on lab time:</p>
+        <pre><code>git clone https://github.com/tacoda/workshop-junior-to-senior.git
+cd workshop-junior-to-senior/seed
+pip install pytest &amp;&amp; pytest      # 3 passed — you're ready</code></pre>
+        <p>⟲ <strong>No local setup?</strong> Pair with someone who's green, or run it in any browser Python sandbox — the seed is two small files.</p>
+        <p><strong>For Step 4</strong> you'll also use your AI coding tool (e.g. Claude Code) opened on the <code>seed/</code> folder — have it installed and working before the session, not during it.</p>
+        <p><strong>What you'll work on.</strong> The seed is a tiny cash-register service: it settles a bill for cash and prints a receipt. Pennies are discontinued, so cash totals round to a nickel — and the decision that matters is <strong>which way they round.</strong> The charter's policy is <em>round down, in the customer's favor</em>: they never pay more than the marked total. That single policy is what makes a plausible-but-wrong change catchable.</p>
+
+        <h3>Your tool: the comprehension card</h3>
+        <p>This is the whole method on one page. You'll use it in the lab and keep it next to your keyboard after.</p>
+        <pre><code>THE DAILY RULE
+  Don't merge a change you can't explain — to the agent, out loud, in your own words.
+  Green pipeline = permission to proceed. Red = a lesson before a human had to teach it.
+
+FIVE QUESTIONS (comprehension in — ask these of any diff)
+  1. What does this do, in one sentence?
+  2. Where does the change enter the system, and where does it leave?
+  3. Why is it written this way? (If neither a rule nor a doc answers, you found a charter gap.)
+  4. Is it consistent with the rest of the codebase? Which nearby code disagrees?
+  5. Which part would I call slop if an agent wrote it — plausible, passing, quietly wrong?
+
+FIVE MOVES (comprehension out — the junior→senior cases)
+  1. Characterize before you change — pin current behavior in a test before you touch it.
+  2. Rename in anger — fix the worst-named thing everywhere; watch it clarify.
+  3. Make it boring — rewrite the clever version as the one you'd rather debug at 3 a.m.
+  4. Predict the failure — write how you expect it to fail, then run it. Were you right?
+  5. Catch the agent being wrong — find the confident, fluent, wrong answer. Prove it.</code></pre>
+
+        <h3>Step 1 · Baseline, then spring the trap</h3>
+        <p>Everything is in <code>seed/</code>. Copy-paste this block and read the comments as you go:</p>
+        <pre><code>cd seed
+pytest                                       # 3 passed
+python app.py                                # cash total $10.80   ← rounded down, customer's favor
+
+git apply patches/plausible-but-wrong.diff   # a diff "an agent handed you" — looks cleaner
+pytest                                        # still 3 passed  ← the trap
+python app.py                                 # cash total $10.85  ← a nickel overcharged</code></pre>
+        <p>Look at those last two lines. The test suite is <strong>green</strong>, and yet the customer is now billed a nickel more than the correct cash total. This is the one idea the whole session is built on:</p>
+        <blockquote><p><strong>Green means "the tests that exist passed," not "the code is correct."</strong></p></blockquote>
+        <p>A nickel doesn't sound like much. It's a nickel on 40% of cash totals — every register, every day, taken from customers who trusted the marked price. That's the bug that becomes a refund program. The shipped suite only used totals that round the same way either direction, so it never noticed the flip. The diff rounds to the <em>nearest</em> nickel — the textbook cash-rounding scheme, written with a <code>float</code> — instead of <em>down</em>, the charter's customer's-favor policy. Leave the diff applied; you'll investigate it next.</p>
+
+        <h3>Step 2 · Run the five questions (comprehension <em>in</em>)</h3>
+        <p>Open <code>seed/money.py</code> and read the change you just applied. With a partner if you can, work down the five questions from the card, out loud. Write your answers down:</p>
+        <ol>
+          <li><strong>What does it do, in one sentence?</strong> (<code>round_cash</code> now rounds to the <em>nearest</em> nickel, not down.)</li>
+          <li><strong>Where does the change enter and leave?</strong> Trace it from <code>app.py</code> into <code>money.py</code> and back to the printed cash total.</li>
+          <li><strong>Why is it written this way?</strong> The comment says "simplified." Rounding to nearest <em>is</em> the textbook cash scheme — but is it <em>this business's</em> policy? And why is there suddenly a <code>float</code>?</li>
+          <li><strong>Is it consistent?</strong> The docstring still promises cash rounds "in the customer's favor," and the charter's iron law says integer cents only. The code now breaks both. Which do you trust?</li>
+          <li><strong>What would you call slop?</strong> Name the exact line that is plausible, passing, and quietly wrong.</li>
+        </ol>
+        <p>A filled card is your first deliverable — and everyone reaches it.</p>
+
+        <h3>Step 3 · Prove it wrong (comprehension <em>out</em>)</h3>
+        <p>Suspicion isn't a catch. Turn it into a test that fails:</p>
+        <ul>
+          <li>A $10.83 total is 1083¢. Customer's favor rounds <strong>down</strong> to <code>1080</code> ($10.80). The "simplified" code rounds to nearest: <code>1085</code> ($10.85) — a nickel the customer never owed.</li>
+          <li>Write one test asserting cash never rounds <em>up</em>, using totals whose last digit forces the direction — the case the shipped suite skipped:</li>
+        </ul>
+        <pre><code>def test_cash_never_rounds_up():
+    for total in [1083, 1084, 999]:
+        assert round_cash(total) == total - (total % 5)</code></pre>
+        <p>Run <code>pytest</code>. It goes <strong>red</strong> on the diff — you just caught a confident, fluent, wrong answer and proved it. That red test is the day you stop being junior, in miniature. Reset before the next step:</p>
+        <pre><code>git apply -R patches/plausible-but-wrong.diff</code></pre>
+
+        <h3>Step 4 · The two loops — a rule and a hook</h3>
+        <p>You caught the overcharge by hand. Now let the <em>charter</em> catch it for you, with the two mechanisms every charter is built from:</p>
+        <ul>
+          <li><strong>Feedforward</strong> — a <strong>rule</strong> in <code>CLAUDE.md</code> that shapes the code <em>before</em> it's written.</li>
+          <li><strong>Feedback</strong> — a <strong>hook</strong> in <code>.claude/hooks/</code> that checks the result <em>after</em> and refuses a bad one.</li>
+        </ul>
+        <p>Both are already on. Open the <code>seed/</code> folder in Claude Code and run two quick prompts.</p>
+        <ol>
+          <li>
+            <strong>The rule steers (feedforward).</strong> Ask your agent, verbatim:
+            <blockquote><p>Show me how you'd implement <code>round_cash(total_cents)</code> — round a cash total to a nickel now that pennies are gone.</p></blockquote>
+            With the rounding rule in <code>CLAUDE.md</code>, it rounds <strong>down</strong>, in the customer's favor (<code>total_cents - total_cents % 5</code>). Without that rule a capable agent rounds to the <em>nearest</em> nickel — the overcharge from Step 1. The rule is the difference.
+          </li>
+          <li>
+            <strong>The hook catches (feedback).</strong> Now ask it to write the bad version anyway:
+            <blockquote><p>Simplify <code>round_cash</code> to round to the nearest nickel: <code>round(total_cents / 5) * 5</code>.</p></blockquote>
+            The moment it saves <code>money.py</code>, the hook fires and blocks it:
+            <pre><code>round-gate (edit): round_cash(1083) = 1085, but the customer's-favor amount
+is 1080 — cash rounded against the customer.</code></pre>
+            Told <em>why</em>, the agent puts it back. The same gate also blocks at <code>git commit</code>, so a bad version can't be saved <em>or</em> shipped.
+          </li>
+        </ol>
+        <p><strong>One rule, one hook:</strong> the rule shaped the draft, the hook caught the one that slipped. That's the whole toolkit a charter uses to bound what an agent does.</p>
+
+        <h3>How it works — the two knobs</h3>
+        <p>You just used one setting of each loop. Both have a design choice, and the seed ships two examples of each so you can feel the tradeoff, not just read it.</p>
+        <p><strong>Feedforward — the rule's <em>specificity</em> (<code>seed/.claude/rules/</code>).</strong> A rule you cannot fail is a rule that cannot steer.</p>
+        <div class="table-scroll"><table>
+          <thead><tr><th>Rule</th><th>What it says</th><th>Tradeoff</th></tr></thead>
+          <tbody>
+            <tr><td><code>cash-vague.md</code></td><td>"Round cash fairly to a nickel."</td><td>Cheap, universal, ages well — and exerts almost no force. Nearest-nickel reads as compliant.</td></tr>
+            <tr><td><code>cash-concrete.md</code></td><td>"Round <em>down</em> to the nickel; 1083¢ settles at 1080, not 1085; integer math."</td><td>More work, narrower scope — but it decides a contested choice the agent would otherwise make for you.</td></tr>
+          </tbody>
+        </table></div>
+        <p><strong>Feedback — the gate's <em>position</em> (<code>seed/.claude/hooks/</code>).</strong> Same check, different distance from the mistake. The earlier the loop closes, the cheaper the fix.</p>
+        <div class="table-scroll"><table>
+          <thead><tr><th>Hook</th><th>Event</th><th>Speed / consequence</th></tr></thead>
+          <tbody>
+            <tr><td><code>round-gate-edit.py</code></td><td><code>PostToolUse</code> on <code>Edit</code>/<code>Write</code></td><td><strong>Fast.</strong> Fires the instant <code>money.py</code> is saved; agent corrected mid-task, fix is local. The bad code did exist on disk for a moment.</td></tr>
+            <tr><td><code>round-gate-commit.py</code></td><td><code>PreToolUse</code> on <code>git commit</code></td><td><strong>Late.</strong> Fires only at ship time; nothing bad ever lands, but the mistake may be buried under later work, so the fix costs more.</td></tr>
+          </tbody>
+        </table></div>
+        <p><strong>When to reach for which loop.</strong> The two loops aren't interchangeable:</p>
+        <ul>
+          <li><strong>Feedforward (rules)</strong> — for <em>contested decisions the model won't guess right</em>. Rounding direction is one: left alone, a capable agent rounds to nearest (with a float) every time. The rule is what makes it round your way.</li>
+          <li><strong>Feedback (hooks)</strong> — for <em>invariants the model must never violate</em>, whether or not it usually gets them right. A hook is a guarantee; a rule is only a nudge.</li>
+        </ul>
+        <p>A rule without a hook is a suggestion; a hook without a rule is a gate no one explained. Together — guidance you write, enforcement you run — they're the smallest whole unit of a charter, and the two mechanisms to reach for first.</p>
+
+        <h3>Think it through — the policy just changed</h3>
+        <blockquote><p><strong>Discussion.</strong> The company changes its mind: cash should now always round <strong>up</strong> — the merchant's favor, never the customer's. You want the agent to write round-<em>up</em> code from now on. <strong>What has to change?</strong> Talk it out before you read the answer.</p></blockquote>
+        <p>The tempting answer is "edit the rule." That is necessary but <em>not sufficient</em> — and the gap is the whole lesson. Three things describe the rounding policy, and all three have to move together:</p>
+        <ol>
+          <li><strong>The rule (feedforward)</strong> — <code>CLAUDE.md</code> and <code>.claude/rules/cash-concrete.md</code>. Change "round down, customer's favor" to "round up, merchant's favor."</li>
+          <li>
+            <strong>The code (imitation)</strong> — <code>seed/money.py</code>. This is the one people forget, and it's the one that matters most. Change the implementation <em>and</em> its docstring:
+            <pre><code>def round_cash(total_cents):
+    """Round a cash total UP to the next nickel (5 cents), in the merchant's favor."""
+    return -(-total_cents // 5) * 5    # integer ceil to a nickel</code></pre>
+          </li>
+          <li>
+            <strong>The hook (feedback)</strong> — both files in <code>.claude/hooks/</code>. Flip the check from floor to ceil so it now blocks anything that <em>doesn't</em> round up:
+            <pre><code>want = -(-total // 5) * 5      # was: total - (total % 5)
+if got != want:               # block when the code failed to round up</code></pre>
+          </li>
+        </ol>
+        <p><strong>Why you still have to change the code — and why the lab can't show it.</strong> At the size of this seed the rule is right in front of the agent and the contradiction is glaring, so a capable agent follows the rule and even flags the stale code as wrong. <strong>The imitation problem is a scale effect.</strong> In a real codebase — thousands of lines, the rule one entry in a long charter, round-down rounding repeated across dozens of call sites — the <em>prevailing pattern in the code</em> becomes the strongest signal the agent has, and it copies that pattern past a rule it barely weighs. The lab is too small to reproduce this; the takeaway is what it points at.</p>
+        <p><strong>And it bites hardest at the architecture level.</strong> Rounding direction is a simple, local decision the model can derive from the rule alone. The rules imitation actually defeats are the <em>design-level</em> ones, where most of a charter's rules live: "use ports and adapters," "no business logic in controllers," "depend on interfaces, not concretes." There is no one-line correct answer to copy; the agent infers "how we do it here" from the surrounding code. If most of the codebase ignores the rule, the counterexamples <em>are</em> the pattern, and the agent replicates them — the more non-compliant code, the stronger the pull.</p>
+        <p>So changing the code isn't optional:</p>
+        <ul>
+          <li><strong>The old code is a real defect.</strong> A rule is a promise about <em>future</em> code; it doesn't retroactively fix <code>round_cash</code>, which keeps rounding down in production until someone edits it.</li>
+          <li><strong>At scale, the code is what the agent imitates.</strong> Leave a round-down implementation in the tree and you've planted the pattern the next change copies — the more of it there is, the louder it gets.</li>
+        </ul>
+        <p>The <strong>hook removes the gamble</strong> — it blocks any round-down result regardless of what the agent weighed. But the hook is a backstop. The durable fix is to <strong>make the code correct</strong>: when nothing in the tree rounds down, there is no contradictory pattern to imitate and no defect left in production. Feedforward, feedback, <em>and</em> the code itself have to agree.</p>
+
+        <h3>The bigger picture — three surfaces, spent sparingly</h3>
+        <p>Step back from the pennies. Everything in this session is about the surfaces that bound what an agent does. There are three, and you just met all of them:</p>
+        <div class="flow">
+          <div class="node">Instruction<span>charter prose</span></div>
+          <div class="arrow">↘</div>
+          <div class="node">The code<span>imitation</span></div>
+          <div class="arrow">→</div>
+          <div class="node">Agent</div>
+          <div class="arrow">↗</div>
+          <div class="node">Feedback<span>sensors, gates</span></div>
+          <div class="arrow">→</div>
+          <div class="node band">Behavior band<span>how tight = reliability</span></div>
+        </div>
+        <ul>
+          <li><strong>Instruction</strong> — the charter prose the agent reads: rules, <code>CLAUDE.md</code>. This is feedforward.</li>
+          <li><strong>The code</strong> — what already exists in the repo, which the agent imitates. The surface juniors forget, and the one that dominates at scale.</li>
+          <li><strong>Feedback</strong> — the sensors and gates that check the result: tests, hooks. This is feedback.</li>
+        </ul>
+        <p>Each surface narrows the <strong>behavior band</strong> — the range of things the agent might do. Reliability is just a tight band. Add a surface and the band gets narrower.</p>
+        <p>Here's the honest part: <strong>this lab is a toy.</strong> A two-line <code>round_cash</code> does not deserve a rule and two hooks — in real life you'd read it once and move on. Every rule and hook costs effort to write and, worse, to keep true as the code changes. So the goal is never <em>the most</em> constraints. It's <strong>the fewest constraints that buy a tight-enough band</strong> — you add one only when something real needs it: money, security, data integrity, a policy with legal or financial weight.</p>
+        <p>Where does that pay for itself? Not here — in a production app. Many files, many tests, many policies, many contributors, an agent making changes all day. There the code surface is huge, no human reads every diff, and comprehension alone can't scale. A few well-placed rules and hooks on the things that actually carry risk keep the band tight when nothing else can. That is when the two mechanisms you practiced today earn their cost — and knowing <em>when not</em> to reach for them is as much the senior's job as knowing how.</p>
+
+        <h3>What you leave with</h3>
+        <ul>
+          <li>The comprehension card — the daily rule, the five questions, the five moves.</li>
+          <li>A filled card applied to a real agent diff.</li>
+          <li>A test you wrote that catches the planted overcharge.</li>
+          <li>A working mental model: three surfaces bound an agent — the rule you write (instruction), the code it imitates, and the hook that checks it (feedback) — and reliability is just a tight behavior band.</li>
+        </ul>
+        <p>But the card is only the method. What carries it into Monday is a handful of shifts in how you <em>think</em> — and not one of them is about typing faster. The agent already types faster than you. Your edge is everything it can't do: knowing what "correct" means here, and noticing when the fluent answer isn't it.</p>
+        <p>Start from what the job actually is. Writing code was never the point — it was always the means. The job is solving a business problem: someone needs a bill settled correctly, a customer not overcharged, a policy honored. The agent commoditizes the means — which doesn't shrink your job, it <em>reveals</em> it. What's left when the typing is free is the part that was always the real work: understanding the problem well enough to know what correct even means. Seniority was always that understanding, not the typing speed; the agent just made it impossible to hide behind the keyboard.</p>
+        <ul>
+          <li><strong>From "does it work?" to "how would I know?"</strong> The junior question is <em>did the tests pass.</em> The senior question is <em>what would have to be true for this to be wrong, and did I check it?</em> Distrust the green until you've named the case it doesn't cover.</li>
+          <li><strong>From "it's done" to "I can explain it."</strong> Working code you can't explain is a debt with your name on it. If you can't say what it does, where it enters and leaves, and why — out loud, in your own words — you haven't finished reading.</li>
+          <li><strong>Confusion is a signal, not a shame.</strong> A stall means the charter never explained it (a gap the <em>team</em> owes you) or you haven't understood it yet (a gap <em>you</em> close by asking). Name which.</li>
+          <li><strong>The agent is a tutor, not an oracle.</strong> Use it to <em>explain</em>, never to <em>skip</em>. Form your own answer before you accept its.</li>
+          <li><strong>You own the change the moment you merge it.</strong> The agent has no accountability — it doesn't get paged, doesn't sit in the review, doesn't answer for the overcharge in production. "The agent wrote it" is not a defense. Ownership is the whole reason comprehension isn't optional.</li>
+        </ul>
+        <p>Three things to run on real work this week: <strong>explain-back before merge</strong> (say what a diff does in one sentence — where the sentence goes vague is where you don't understand it); <strong>predict, then run</strong> (write how you expect it to fail first — being wrong on paper is free); <strong>one move a day</strong> (the habit is the deliverable, not any single catch).</p>
+        <p>And the highest-leverage hour you have: <strong>pair with a senior — and mine the <em>why</em>, not the answer.</strong> The <em>what</em> is on the screen; the <em>why</em> is in their head. Watch what they distrust — seniors flinch at certain diffs before they can say why, and that trained suspicion is exactly what you're building. Then reverse the chair and explain <em>your</em> change to them — where you start hand-waving is where your understanding runs out.</p>
+
+        <hr />
+
+        <h2>After the workshop — the take-home lab</h2>
+        <p>The session gives you the card and one rep on a toy repo. Judgment comes from reps on real code you didn't write. This lab is yours to run afterward — no instructor, no answer key. Do it on a project you'll never ship to, so you can be wrong for free.</p>
+        <p><strong>Why an open-source project.</strong> A toy seed can't teach you scale, history, or the weight of code other people depend on. A real project can: it's readable at your own pace, its commit history records why every line is the way it is, and its test suite shows what "proven correct" actually looks like.</p>
+        <p><strong>Why SQLite is the one to start on.</strong></p>
+        <ul>
+          <li><strong>Small enough to hold.</strong> One file's worth of public API, legible in an afternoon.</li>
+          <li><strong>Famous for its tests.</strong> It ships far more test code than library code, and documents <em>how</em> it's tested — the discipline this workshop trains, at professional scale. (<a href="https://www.sqlite.org/testing.html" target="_blank" rel="noopener">sqlite.org/testing.html</a>)</li>
+          <li><strong>The docs explain the <em>why</em></strong> — which is question 3 on your card, answered for you.</li>
+          <li><strong>Self-contained C.</strong> Legible and dependency-free; you see exactly where a change enters and leaves.</li>
+        </ul>
+        <p>Source and docs: <a href="https://www.sqlite.org/" target="_blank" rel="noopener">sqlite.org</a> · source at <a href="https://www.sqlite.org/src/" target="_blank" rel="noopener">sqlite.org/src</a> · a readable mirror lives on GitHub.</p>
+        <p><strong>Run the card on real code:</strong></p>
+        <ol>
+          <li><strong>Read one design doc, explain it back.</strong> Pick a page from the SQLite docs, read it, then explain it to your agent in your own words. Where you stall is where you didn't understand.</li>
+          <li><strong>Comprehension pass.</strong> Choose one self-contained function. Run all five questions against it. Use the agent as a tutor — ask <em>what</em>, <em>where</em>, <em>why</em> — but form your own answer first.</li>
+          <li><strong>Predict the failure (move 4).</strong> Pick one test. Before reading it, predict what input would break the code it guards. Then read the test. Were you right?</li>
+          <li><strong>Catch the agent wrong (move 5).</strong> Ask your agent to "simplify" or "optimize" one small function. Run the five questions on its diff. Prove it correct, or prove it wrong with a test.</li>
+          <li><strong>Legibility read (move 3).</strong> Find the best-named and worst-named thing you can. Ask why the good one is good. That instinct is what you're building.</li>
+        </ol>
+        <p><strong>Repeat step 4 weekly</strong> on any codebase you touch. The habit is the deliverable, not any one catch.</p>
+
+        <div style="margin-top:44px;display:flex;gap:12px;flex-wrap:wrap;">
+          <a class="btn btn-primary" href="https://github.com/tacoda/workshop-junior-to-senior" target="_blank" rel="noopener">Get the repo →</a>
+          <a class="btn btn-ghost" href="mailto:ian@fulcorum.com?subject=Junior%20to%20Senior%20workshop">Bring it to your team</a>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
 <footer>
   <div class="wrap foot-inner">
     <div>© <span id="year"></span> Fulcorum · AI enablement for reliable, governable software</div>
@@ -511,6 +788,7 @@
 /* ---------- SPA router (hash-based) ---------- */
 function currentRoute() {
   const h = location.hash.replace(/^#/, '') || '/';
+  if (h.startsWith('/workshops/junior-to-senior')) return 'workshop-jr';
   if (h.startsWith('/workshops')) return 'workshops';
   if (h.startsWith('/events')) return 'events';
   if (h.startsWith('/resources')) return 'resources';
@@ -518,7 +796,7 @@ function currentRoute() {
 }
 function render() {
   const route = currentRoute();
-  const path = route === 'home' ? '/' : '/' + route;
+  const path = route === 'home' ? '/' : route === 'workshop-jr' ? '/workshops' : '/' + route;
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   document.getElementById('view-' + route).classList.add('active');
   document.querySelectorAll('.nav-links a[data-route]').forEach(a => {
@@ -683,6 +961,10 @@ function drawWorkshops() {
 function renderWorkshop(w) {
   const req = `mailto:ian@fulcorum.com?subject=${encodeURIComponent('Workshop request — ' + (w.title || ''))}`;
   const isFree = (w.tier || '').toLowerCase() === 'free';
+  const actions = w.page
+    ? `<a class="btn btn-primary" href="${w.page}">Open workshop</a>
+       ${w.repo ? `<a class="btn btn-ghost" href="${w.repo}" target="_blank" rel="noopener">Repo</a>` : ''}`
+    : `<a class="btn btn-primary" href="${req}">${isFree ? 'Request access' : 'Request / book'}</a>`;
   return `
     <div class="card ws-card">
       ${w.tier ? `<span class="tier">${w.tier}</span>` : ''}
@@ -690,7 +972,7 @@ function renderWorkshop(w) {
       <p>${w.description || ''}</p>
       <div class="price-row"><span class="dur">${w.duration || ''}</span></div>
       <div class="ws-actions">
-        <a class="btn btn-primary" href="${req}">${isFree ? 'Request access' : 'Request / book'}</a>
+        ${actions}
       </div>
     </div>`;
 }

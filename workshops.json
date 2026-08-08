@@ -7,7 +7,9 @@
           "title": "Junior to Senior in the Age of AI",
           "tier": "Free",
           "duration": "1 hr",
-          "description": "The agent changes what it means to be junior more than what it means to be senior. Build the judgment the tool can't supply."
+          "description": "The agent changes what it means to be junior more than what it means to be senior. Build the judgment the tool can't supply.",
+          "page": "#/workshops/junior-to-senior",
+          "repo": "https://github.com/tacoda/workshop-junior-to-senior"
         }
       ]
     },
