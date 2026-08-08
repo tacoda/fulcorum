@@ -705,8 +705,7 @@ function renderWorkshop(w) {
       <p>${w.description || ''}</p>
       <div class="price-row"><span class="p grad-text">${w.price || ''}</span><span class="dur">${w.duration || ''}</span></div>
       <div class="ws-actions">
-        ${w.url ? `<a class="btn btn-primary" href="${w.url}" target="_blank" rel="noopener">${w.cta || 'Open workshop'}</a>` : ''}
-        <a class="btn btn-ghost" href="${req}">${isFree ? 'Ask a question' : 'Request / book'}</a>
+        <a class="btn btn-primary" href="${req}">${isFree ? 'Request access' : 'Request / book'}</a>
       </div>
     </div>`;
 }
