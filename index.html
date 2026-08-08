@@ -676,34 +676,22 @@ function drawWorkshops() {
       </div>`;
     return;
   }
-  const bundle = w.bundle ? `
-    <div class="ws-bundle">
-      <div>
-        <h3>${w.bundle.title}</h3>
-        ${w.bundle.note ? `<p>${w.bundle.note}</p>` : ''}
-      </div>
-      <div class="bundle-right">
-        <div class="price grad-text">${w.bundle.price}</div>
-        ${w.bundle.saved ? `<div class="save">${w.bundle.saved}</div>` : ''}
-        <a class="btn btn-primary" href="${w.bundle.url}">${w.bundle.cta || 'Request the bundle'}</a>
-      </div>
-    </div>` : '';
   const groupsHtml = groups.map(g => `
     <div class="ws-group">
       ${g.label ? `<div class="lbl">${g.label}</div>` : ''}
       <div class="grid">${(g.items || []).map(renderWorkshop).join('')}</div>
     </div>`).join('');
-  root.innerHTML = bundle + groupsHtml;
+  root.innerHTML = groupsHtml;
 }
 function renderWorkshop(w) {
   const req = `mailto:ian@fulcorum.com?subject=${encodeURIComponent('Workshop request — ' + (w.title || ''))}`;
-  const isFree = (w.price || '').toLowerCase() === 'free';
+  const isFree = (w.tier || '').toLowerCase() === 'free';
   return `
     <div class="card ws-card">
       ${w.tier ? `<span class="tier">${w.tier}</span>` : ''}
       <h3>${w.title || 'Workshop'}</h3>
       <p>${w.description || ''}</p>
-      <div class="price-row"><span class="p grad-text">${w.price || ''}</span><span class="dur">${w.duration || ''}</span></div>
+      <div class="price-row"><span class="dur">${w.duration || ''}</span></div>
       <div class="ws-actions">
         <a class="btn btn-primary" href="${req}">${isFree ? 'Request access' : 'Request / book'}</a>
       </div>
