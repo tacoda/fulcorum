@@ -29,16 +29,16 @@
           "description": "Build the engine that applies the charter to a single run. agent = model + harness."
         },
         {
-          "title": "Factory",
-          "tier": "Core",
-          "duration": "3 hr",
-          "description": "Build the runtime line that runs agent processes into delivered work: ticket → PR. The meta-harness."
-        },
-        {
           "title": "Orchestrator",
           "tier": "Core",
           "duration": "3 hr",
           "description": "Build the harness that manages multiple agents: one lead, N workers, run in parallel, then merged."
+        },
+        {
+          "title": "Factory",
+          "tier": "Core",
+          "duration": "3 hr",
+          "description": "Build the runtime line that runs agent processes into delivered work: ticket → PR. The meta-harness."
         }
       ]
     },
