@@ -14,66 +14,14 @@
       ]
     },
     {
-      "label": "Core workshops",
+      "label": "The intensive · multi-day cohort",
       "items": [
         {
-          "title": "Charter",
-          "tier": "Core",
-          "duration": "2 hr",
-          "description": "Author the standard that governs an agent. Prose, no code — the layered spec every run answers to."
-        },
-        {
-          "title": "Harness",
-          "tier": "Core",
-          "duration": "3 hr",
-          "description": "Build the engine that applies the charter to a single run. agent = model + harness."
-        },
-        {
-          "title": "Orchestrator",
-          "tier": "Core",
-          "duration": "3 hr",
-          "description": "Build the harness that manages multiple agents: one lead, N workers, run in parallel, then merged."
-        },
-        {
-          "title": "Factory",
-          "tier": "Core",
-          "duration": "3 hr",
-          "description": "Build the runtime line that runs agent processes into delivered work: ticket → PR. The meta-harness."
-        }
-      ]
-    },
-    {
-      "label": "Deep dives · 5 hr each",
-      "items": [
-        {
-          "title": "Deep Agents on LangChain / LangGraph",
-          "tier": "Deep dive",
-          "duration": "5 hr",
-          "description": "Build an orchestrating Deep Agent: a producer that delegates to specialist subagents, end to end, from scaffolding to a packaged result."
-        },
-        {
-          "title": "Pydantic AI",
-          "tier": "Deep dive",
-          "duration": "5 hr",
-          "description": "Build a real harness and orchestrator on Pydantic AI — from one validated unit of work to a producer delegating across specialist agents."
-        },
-        {
-          "title": "Claude Code",
-          "tier": "Deep dive",
-          "duration": "5 hr",
-          "description": "Go deep on Claude Code as a harness — commands, hooks, subagents, MCP, and the seams that make it reliable on a real repo."
-        },
-        {
-          "title": "pi",
-          "tier": "Deep dive",
-          "duration": "5 hr",
-          "description": "Use the pi coding agent as a harness to build on a real repo — then see the same extension surfaces compose into a general harness."
-        },
-        {
-          "title": "iii",
-          "tier": "Deep dive",
-          "duration": "5 hr",
-          "description": "Build a harness by composition on iii — durable worker nodes wired through a queue, from intake to synthesis."
+          "title": "Reliable & Durable Agents",
+          "tier": "Intensive",
+          "duration": "Multi-day cohort",
+          "description": "Every workshop but the free one, consolidated into one course: charter → harness → orchestrator → factory, then a deep-dive track on the framework you ship on. Join the waitlist for the next cohort.",
+          "page": "/workshops/reliable-durable-agents"
         }
       ]
     }
